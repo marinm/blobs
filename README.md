@@ -4,16 +4,14 @@ CRUD endpoint for large binary objects
 
 ```
 Create  POST   /blobs
-Read    GET    /blobs/:uuid
-Update  PUT    /blobs/:uuid
-Delete  DELETE /blobs/:uuid
+Read    GET    /blobs/:id
+Update  PUT    /blobs/:id
+Delete  DELETE /blobs/:id
 ```
 
 Create a blob:
 ```
-curl -X POST https://marinm.net/blobs \
-  -H "Content-Type: text/plain" \
-  --data-binary 'hello world';
+curl -X POST https://marinm.net/blobs -H "Content-Type: text/plain" --data-binary 'hello world';
 ```
 The response will be something like:
 ```
@@ -22,17 +20,15 @@ The response will be something like:
 
 Read a blob:
 ```
-curl https://marinm.net/blobs/:uuid
+curl https://marinm.net/blobs/:id
 ```
 
 Update a blob:
 ```
-curl -X PUT https://marinm.net/blobs/:uuid \
-  -H "Content-Type: text/plain"
-  --data-binary 'hello world updated';
+curl -X PUT https://marinm.net/blobs/:id -H "Content-Type: text/plain" --data-binary 'hello world updated';
 ```
 
 Delete a blob:
 ```
-curl -X DELETE https://marinm.net/blobs/:uuid
+curl -X DELETE https://marinm.net/blobs/:id
 ```
