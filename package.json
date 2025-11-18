@@ -1,8 +1,8 @@
 {
-  "name": "blobs",
+  "name": "@marinm/blobs",
   "version": "1.0.0",
   "description": "Express CRUD routes for storing blobs",
-  "homepage": "https://github.com/marinm/blobs#readme",
+  "homepage": "https://github.com/marinm/blobs",
   "bugs": {
     "url": "https://github.com/marinm/blobs/issues"
   },
