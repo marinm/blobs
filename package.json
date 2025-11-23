@@ -1,17 +1,17 @@
 {
-  "name": "@marinm/blobs",
-  "version": "1.1.0",
+  "name": "@marinm/express-blobs",
+  "version": "0.0.0",
   "description": "Express CRUD routes for storing blobs",
-  "homepage": "https://github.com/marinm/blobs",
+  "homepage": "https://github.com/marinm/express-blobs",
   "scripts": {
     "build": "tsc"
   },
   "bugs": {
-    "url": "https://github.com/marinm/blobs/issues"
+    "url": "https://github.com/marinm/express-blobs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marinm/blobs.git"
+    "url": "git+https://github.com/marinm/express-blobs.git"
   },
   "license": "ISC",
   "keywords": [
