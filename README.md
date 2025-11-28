@@ -21,7 +21,7 @@ The response will be something like:
 ```json
 [
   {
-    "id": "221e0386-eef1-4874-b953-eb0492e194f3	",
+    "id": "221e0386-eef1-4874-b953-eb0492e194f3",
     "size": 70829
   },
   {
@@ -43,8 +43,11 @@ curl -X POST http://localhost:3000/blobs --data-binary 'hello world';
 
 The response will be something like:
 
-```
-{"id":"1d72ac22-480d-4ef8-8adf-1cd483d893c1"}
+```json
+{
+  "id": "1d72ac22-480d-4ef8-8adf-1cd483d893c1",
+  "size": 70829
+}
 ```
 
 Read a blob:

@@ -33,7 +33,8 @@ export function createBlobsRouter(directory: string, rawLimit: string) {
       const id = crypto.randomUUID();
       const filePath = path.join(directory, id);
       await fs.writeFile(filePath, req.body);
-      res.status(201).json({ id });
+      const stats = await fs.stat(filePath);
+      res.status(201).json({ id, size: stats.size });
     } catch {
       res.sendStatus(500);
     }
