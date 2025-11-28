@@ -2,9 +2,25 @@ import express from "express";
 import { promises as fs } from "fs";
 import path from "path";
 import crypto from "crypto";
+import { readdir } from "node:fs/promises";
 export function createBlobsRouter(directory, rawLimit) {
     const router = express.Router();
     router.use(express.raw({ type: "*/*", limit: rawLimit }));
+    // Index
+    router.get("/blobs", async (req, res) => {
+        try {
+            const filenames = await readdir(directory);
+            const stats = await Promise.all(filenames.map(async (filename) => {
+                const filepath = path.join(directory, filename);
+                const st = await fs.stat(filepath);
+                return { id: filename, size: st.size };
+            }));
+            res.json(stats);
+        }
+        catch {
+            res.sendStatus(500);
+        }
+    });
     // Create
     router.post("/blobs", async (req, res) => {
         try {
